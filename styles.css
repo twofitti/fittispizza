@@ -1,0 +1,223 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #152026;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Main content styles */
+main {
+    margin-top: 4rem;
+    padding: 1rem;
+}
+
+/* Intro section */
+.intro {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f8f9fa;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.intro h1 {
+    color: #152026;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Featured Special section */
+.featured-special {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #fff;
+    margin-bottom: 2rem;
+    border-top: 2px solid #152026;
+    border-bottom: 2px solid #152026;
+}
+
+.featured-special h2 {
+    color: #152026;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.special-pizza {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.special-pizza:hover {
+    transform: translateY(-5px);
+}
+
+.special-pizza img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.special-pizza h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    color: #152026;
+    font-size: 1.8rem;
+}
+
+.special-pizza p {
+    padding: 0 1.5rem 1.5rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Menu section */
+.menu {
+    padding: 1rem;
+}
+
+.menu h2 {
+    text-align: center;
+    color: #152026;
+    margin-bottom: 2rem;
+}
+
+.pizza-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+.pizza-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pizza-card:hover {
+    transform: translateY(-5px);
+}
+
+.pizza-card img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.pizza-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #152026;
+}
+
+.pizza-card p {
+    padding: 0 1rem 1rem;
+    color: #666;
+}
+
+/* Logo Animation */
+.logo-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10rem;
+    margin-top: 2rem;
+}
+
+.logo-slide {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    height: auto;
+    opacity: 0;
+    animation: logoCycle 3s infinite;
+}
+
+.logo-slide:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.logo-slide:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes logoCycle {
+    0%, 33% {
+        opacity: 1;
+    }
+    34%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+    .pizza-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pizza-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 4rem auto 0;
+    }
+} 
