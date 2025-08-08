@@ -102,7 +102,7 @@ main {
 
 .special-pizza img {
     width: 100%;
-    height: 500px;
+    aspect-ratio: 11.5 / 6.3;
     object-fit: cover;
 }
 
@@ -148,8 +148,8 @@ main {
 }
 
 .pizza-card img {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    aspect-ratio: 11.5 / 6.3;
     object-fit: cover;
 }
 
@@ -163,41 +163,21 @@ main {
     color: #666;
 }
 
-/* Logo Animation */
+/* Logo */
 .logo-container {
     position: relative;
     width: 100%;
     height: 200px;
     margin-bottom: 10rem;
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logo-slide {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+.logo {
     max-width: 300px;
     height: auto;
-    opacity: 0;
-    animation: logoCycle 3s infinite;
-}
-
-.logo-slide:nth-child(2) {
-    animation-delay: 1s;
-}
-
-.logo-slide:nth-child(3) {
-    animation-delay: 2s;
-}
-
-@keyframes logoCycle {
-    0%, 33% {
-        opacity: 1;
-    }
-    34%, 100% {
-        opacity: 0;
-    }
 }
 
 /* Media queries for larger screens */
