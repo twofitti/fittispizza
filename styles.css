@@ -147,10 +147,6 @@ main {
     transition: transform 0.3s ease;
 }
 
-.pizza-card:hover {
-    transform: translateY(-5px);
-}
-
 .pizza-card img {
     width: 100%;
     aspect-ratio: 11.5 / 6.3;
@@ -165,6 +161,17 @@ main {
 .pizza-card p {
     padding: 0 1rem 1rem;
     color: #666;
+}
+
+/* Pizza link styles */
+.pizza-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.pizza-link:hover .pizza-card {
+    transform: translateY(-5px);
 }
 
 /* Logo */
