@@ -106,8 +106,9 @@ main {
 
 .special-pizza img {
     width: 100%;
-    aspect-ratio: 11.5 / 6.3;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain; /* ensure full image is visible */
+    display: block;
 }
 
 .special-pizza h3 {
