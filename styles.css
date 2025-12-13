@@ -67,6 +67,12 @@ main {
     font-size: 2rem;
 }
 
+.intro h4 {
+    color: #152026;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
 .intro-text {
     max-width: 800px;
     margin: 0 auto;
@@ -81,7 +87,6 @@ main {
     background-color: #fff;
     margin-bottom: 2rem;
     border-top: 2px solid #152026;
-    border-bottom: 2px solid #152026;
 }
 
 .featured-special h2 {
