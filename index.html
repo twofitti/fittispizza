@@ -82,55 +82,39 @@
         </section>
 
         <section id="menu" class="menu">
-            <h2>Our Menu</h2>
-            <div class="pizza-grid">
-                <a href="https://order.toasttab.com/online/fittis-pizza-1035-conger" target="_blank" class="pizza-link">
-                    <article class="pizza-card">
-                        <img src="images/Caprese.png" alt="The Caprese Pizza">
-                        <h3>The Caprese</h3>
-                        <p>fresh mozzarella, tomato, basil, balsamic glaze, side of house-made buttermilk ranch</p>
-                    </article>
-                </a>
-
-                <a href="https://order.toasttab.com/online/fittis-pizza-1035-conger" target="_blank" class="pizza-link">
-                    <article class="pizza-card">
-                        <img src="images/Bay Bro.png" alt="Bay Bro">
-                        <h3>Bay Bro</h3>
-                        <p>crispy cupped pepperoni, sausage, pineapple, honey jalapeños, basil, mozzarella, red sauce, side of house-made buttermilk ranch </p>
-                    </article>
-                </a>
-
-                <a href="https://order.toasttab.com/online/fittis-pizza-1035-conger" target="_blank" class="pizza-link">
-                    <article class="pizza-card">
-                        <img src="images/BBQ Chicken.png" alt="BBQ Chicken">
-                        <h3>BBQ Chicken</h3>
-                        <p>charcoal BBQ chicken, red onions, cilantro, mozzarella, side of house-made buttermilk ranch</p>
-                    </article>
-                </a>
-
-                <a href="https://order.toasttab.com/online/fittis-pizza-1035-conger" target="_blank" class="pizza-link">
-                    <article class="pizza-card">
-                        <img src="images/The Fall.png" alt="The Fall">
-                        <h3>The Fall</h3>
-                        <p>roasted fall veggies, whipped garlic ricotta,  basil, balsamic glaze, mozzarella, side of house-made buttermilk ranch</p>
-                    </article>
-                </a>
-
-                <a href="https://order.toasttab.com/online/fittis-pizza-1035-conger" target="_blank" class="pizza-link">
-                    <article class="pizza-card">
-                        <img src="images/Pepperoni.png" alt="Pepperoni Pizza">
-                        <h3>Pepperoni</h3>
-                        <p>crispy cupped pepperoni, mozzarella, red sauce, side of house-made buttermilk ranch</p>
-                    </article>
-                </a>
-
-                <a href="https://order.toasttab.com/online/fittis-pizza-1035-conger" target="_blank" class="pizza-link">
-                    <article class="pizza-card">
-                        <img src="images/Cheese.png" alt="Cheese Pizza">
-                        <h3>Cheese</h3>
-                        <p>tomato sauce, mozzarella, side of house-made buttermilk ranch</p>
-                    </article>
-                </a>                
+            <a href="https://order.toasttab.com/online/fittis-pizza-1035-conger" target="_blank" class="menu-button">See Our Full Menu</a>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="images/carousel/01 Pepperoni.png" alt="Pepperoni Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/02 BBQ Tofu.png" alt="BBQ Tofu Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/03 Boxpng.png" alt="Box">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/06 Cheese.png" alt="Cheese Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/06 Pull Apsrt no box.png" alt="Pull Aparts">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/07 The Fall.png" alt="The Fall Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/08 Bay Bro.png" alt="Bay Bro Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/09 BBQ Chicken.png" alt="BBQ Chicken Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/10 Caprese.png" alt="Caprese Pizza">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -138,5 +122,80 @@
             <p>Want to plan a pizza party or have a question? Call us at 541-321-8472</p>
         </section>
     </main>
+    <script>
+        // Carousel functionality with seamless infinite loop
+        (function() {
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const carouselContainer = document.querySelector('.carousel-container');
+            
+            const totalSlides = slides.length;
+            let currentSlide = 0; // Start at first image
+            let autoPlayInterval;
+            let isTransitioning = false;
+            
+            // Clone the first slide and append it to the end for seamless loop
+            const firstSlideClone = slides[0].cloneNode(true);
+            track.appendChild(firstSlideClone);
+            
+            function updateCarousel() {
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+            
+            function nextSlide() {
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                currentSlide++;
+                track.style.transition = 'transform 0.5s ease-in-out';
+                updateCarousel();
+                
+                // If we've reached the clone of the first slide at the end,
+                // instantly jump back to the real first slide without animation
+                if (currentSlide === totalSlides) {
+                    setTimeout(() => {
+                        track.style.transition = 'none';
+                        currentSlide = 0;
+                        updateCarousel();
+                        // Re-enable transition after a tiny delay to ensure the jump is invisible
+                        setTimeout(() => {
+                            track.style.transition = 'transform 0.5s ease-in-out';
+                            isTransitioning = false;
+                        }, 50);
+                    }, 500); // Wait for transition to complete
+                } else {
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 500);
+                }
+            }
+            
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    if (!isTransitioning) {
+                        nextSlide();
+                    }
+                }, 2000);
+            }
+            
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+            
+            // Pause on hover
+            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+            carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            
+            // Initialize - start at first image
+            track.style.transition = 'none';
+            updateCarousel();
+            
+            // Start auto-play after a brief delay to ensure smooth start
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s ease-in-out';
+                startAutoPlay();
+            }, 100);
+        })();
+    </script>
 </body>
 </html> 
