@@ -39,6 +39,10 @@
             <p class="intro-text">Fitti's Pizza is located in a light industrial complex at 1035 Conger St, Unit 7.</p>
         </section>
 
+        <section class="open-sundays">
+            <img src="images/Open Sundays.png" alt="Open Sundays">
+        </section>
+
         <section class="featured-special">
             <h2>Special of the Month</h2>
             <a href="https://order.toasttab.com/online/fittis-pizza-1035-conger" target="_blank" class="pizza-link">
@@ -50,32 +54,7 @@
             </a>
         </section>
 
-        <!-- <section class="intro" style="border-bottom: 2px solid #152026;">
-            <h4>Happy Hour Promo</h4>
-            <p class="intro-text">
-              Sorry! Our ordering system doesn't allow scheduled orders and
-              promo codes to be used together. To receive the Happy Hour deal,
-              your order must be placed and paid for during Happy Hour.
-              <br>
-              <br>
-            </p>
-            <p class="intro-text"><strong>How to use the Happy Hour promo:</strong></p>
-            <div class="intro-text">
-              <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
-                <li>Orders must be made and paid for between 6:45pm – 8:00pm</li>
-                <li>Add all items to your cart as usual</li>
-                <li>Add one cheese pizza to your order</li>
-                <li>
-                  At checkout, click <strong>"Add Promo Code"</strong> and enter
-                  <strong>Happy Hour</strong>
-                </li>
-              </ul>
-            </div>
-            <p class="intro-text">
-              <br>
-                Enjoy your pizza! 
-            </p>
-        </section> -->
+   
 
         <section class="intro">
             <p class="intro-text">Fitti's pizza serves Detroit-style pizza with a Pacific Northwest twist.<br>We're open:<br> Fridays from 4pm to 8pm<br>Saturdays from 3pm to 8pm<br>Sundays from 4pm to 8pm<br>Order online for pickup or delivery directly through our website.</p>
@@ -113,6 +92,34 @@
                         <div class="carousel-slide">
                             <img src="images/carousel/10 Caprese.png" alt="Caprese Pizza">
                         </div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="carousel-slide">
+                            <img src="images/carousel/01 Pepperoni.png" alt="Pepperoni Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/02 BBQ Tofu.png" alt="BBQ Tofu Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/03 Boxpng.png" alt="Box">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/06 Cheese.png" alt="Cheese Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/06 Pull Apsrt no box.png" alt="Pull Aparts">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/07 The Fall.png" alt="The Fall Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/08 Bay Bro.png" alt="Bay Bro Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/09 BBQ Chicken.png" alt="BBQ Chicken Pizza">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/carousel/10 Caprese.png" alt="Caprese Pizza">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,80 +129,5 @@
             <p>Want to plan a pizza party or have a question? Call us at 541-321-8472</p>
         </section>
     </main>
-    <script>
-        // Carousel functionality with seamless infinite loop
-        (function() {
-            const track = document.querySelector('.carousel-track');
-            const slides = document.querySelectorAll('.carousel-slide');
-            const carouselContainer = document.querySelector('.carousel-container');
-            
-            const totalSlides = slides.length;
-            let currentSlide = 0; // Start at first image
-            let autoPlayInterval;
-            let isTransitioning = false;
-            
-            // Clone the first slide and append it to the end for seamless loop
-            const firstSlideClone = slides[0].cloneNode(true);
-            track.appendChild(firstSlideClone);
-            
-            function updateCarousel() {
-                track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }
-            
-            function nextSlide() {
-                if (isTransitioning) return;
-                
-                isTransitioning = true;
-                currentSlide++;
-                track.style.transition = 'transform 0.5s ease-in-out';
-                updateCarousel();
-                
-                // If we've reached the clone of the first slide at the end,
-                // instantly jump back to the real first slide without animation
-                if (currentSlide === totalSlides) {
-                    setTimeout(() => {
-                        track.style.transition = 'none';
-                        currentSlide = 0;
-                        updateCarousel();
-                        // Re-enable transition after a tiny delay to ensure the jump is invisible
-                        setTimeout(() => {
-                            track.style.transition = 'transform 0.5s ease-in-out';
-                            isTransitioning = false;
-                        }, 50);
-                    }, 500); // Wait for transition to complete
-                } else {
-                    setTimeout(() => {
-                        isTransitioning = false;
-                    }, 500);
-                }
-            }
-            
-            function startAutoPlay() {
-                autoPlayInterval = setInterval(() => {
-                    if (!isTransitioning) {
-                        nextSlide();
-                    }
-                }, 2000);
-            }
-            
-            function stopAutoPlay() {
-                clearInterval(autoPlayInterval);
-            }
-            
-            // Pause on hover
-            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-            carouselContainer.addEventListener('mouseleave', startAutoPlay);
-            
-            // Initialize - start at first image
-            track.style.transition = 'none';
-            updateCarousel();
-            
-            // Start auto-play after a brief delay to ensure smooth start
-            setTimeout(() => {
-                track.style.transition = 'transform 0.5s ease-in-out';
-                startAutoPlay();
-            }, 100);
-        })();
-    </script>
 </body>
 </html> 
