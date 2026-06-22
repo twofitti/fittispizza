@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitti's Pizza</title>
-    <link rel="stylesheet" href="styles.css?v=20260606-27">
+    <link rel="stylesheet" href="styles.css?v=20260606-30">
 </head>
 <body>
     <header>
@@ -161,10 +161,10 @@
                     <h2 id="reviews-heading">Google Reviews</h2>
                 </div>
                 <div class="reviews-actions">
-                    <div class="reviews-score" aria-label="4.9 stars from 69 Google reviews">
+                    <div class="reviews-score" aria-label="4.9 stars from 75 Google reviews">
                         <span class="score-number">4.9</span>
                         <span class="score-stars">★★★★★</span>
-                        <span class="score-count">69 Google reviews</span>
+                        <span class="score-count">75 Google reviews</span>
                     </div>
                 </div>
             </div>
@@ -335,7 +335,7 @@
                 <span class="hours-list">
                     Fridays: 4pm - 8pm<br>
                     Saturdays: 3pm - 8pm<br>
-                    Sundays: 4pm to 8pm
+                    Sundays: 4pm - 8pm
                 </span><br>
                 Order online for pickup or delivery directly through our website.
             </p>
@@ -376,7 +376,7 @@
 
             const getCardsPerPage = () => {
                 const styles = window.getComputedStyle(carousel);
-                const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+                const gap = parseFloat(styles.columnGap) || parseFloat(styles.gap) || 0;
                 const card = carousel.querySelector(".review-card");
                 const cardWidth = card ? card.getBoundingClientRect().width : carousel.clientWidth;
 
