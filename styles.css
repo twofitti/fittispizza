@@ -80,6 +80,10 @@ main {
 }
 
 /* Intro section */
+body.temporarily-closed main {
+    margin-top: var(--top-section-gap);
+}
+
 .intro {
     text-align: center;
     padding: 2rem 1rem;

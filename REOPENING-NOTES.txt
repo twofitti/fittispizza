@@ -1,0 +1,40 @@
+Temporary closure changes - October 25, 2026
+
+Pre-closure baseline: Git commit da8116a1ed75f8995996baa392d0854d225b75af
+View the original homepage with:
+git show da8116a:index.html
+View the original styles with:
+git show da8116a:styles.css
+
+Closure setup:
+- Use the supplied images/We are Moving.png and matching descriptive alt text.
+- Remove the fixed ORDER ONLINE header, special-card ordering link, and
+  See Our Full Menu button from index.html.
+- Remove the nonfunctional Order Online link from about.html.
+- Remove the Conger Street Google Maps embed.
+- Replace opening hours and online pickup/delivery copy with closure text.
+- Add temporarily-closed to the homepage body and a CSS margin override to
+  avoid an empty header gap. Original header/button/map styles are retained.
+- Remove the entire pizza special section. Retain its image and CSS for reopening.
+- Keep the conveyor, reviews, review link, and footer.
+
+Reopening checklist:
+1. Confirm the new address, opening date, hours, Toast URL, and phone number.
+2. Replace the closure announcement and its alt text with reopening information.
+3. Restore the header, special-card link, and menu button using the baseline
+   markup, but point all three to the confirmed NEW ordering URL.
+   Previous URL: https://order.toasttab.com/online/fittis-pizza-1035-conger
+4. Remove the temporarily-closed body class and its CSS margin override.
+5. Restore hours and pickup/delivery copy with the confirmed new schedule.
+   Previous hours: Fridays 4pm - 8pm; Saturdays 3pm - 8pm; Sundays 4pm - 8pm.
+6. Restore a map for the NEW address, not the old Conger Street map.
+   Old address: 1035 Conger Street, Unit 7, Eugene, OR 97402.
+   Use the baseline map-section markup as the layout reference.
+7. Verify the review link points at the correct business listing after the move.
+8. Restore the featured-special section from the baseline with the current special.
+   Previous special: Jalapeño Popper; image: images/jalapeno-popper.png.
+   Ingredients: grande mozzarella, charred jalapeño, red onion, bacon,
+   ranch cream cheese, honey jalapeño, maple glaze, spring onion.
+   Check footer/contact details and the about page for current copy.
+9. Check desktop/mobile layout, image loading, ordering links, and map before
+   committing and publishing. Do not restore whole old files over newer edits.
